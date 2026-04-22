@@ -1,18 +1,121 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My Games</title>
+  <title>Fishy Studios</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f0f0f;
+      color: #e0e0e0;
+    }
+
+    .navbar {
+      display: flex;
+      background: #1a1a1a;
+      padding: 10px 20px;
+      border-bottom: 1px solid #333;
+    }
+
+    .nav-btn {
+      margin-right: 20px;
+      cursor: pointer;
+      color: #aaa;
+      transition: 0.2s;
+    }
+
+    .nav-btn:hover {
+      color: #fff;
+    }
+
+    .nav-btn.active {
+      color: #4da6ff;
+    }
+
+    .page {
+      display: none;
+      padding: 30px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    h1 {
+      color: #ffffff;
+    }
+
+    .card {
+      background: #1a1a1a;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 8px;
+      border: 1px solid #2a2a2a;
+    }
+
+    a {
+      color: #4da6ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>My Games</h1>
 
-  <h2>Game 1</h2>
-  <p>A short description of the game.</p>
-  <a href="https://gamejolt.com/games/yourgame">Play / Download</a>
+  <div class="navbar">
+    <div class="nav-btn active" onclick="showPage('main')">Main</div>
+    <div class="nav-btn" onclick="showPage('games')">Games</div>
+    <div class="nav-btn" onclick="showPage('help')">Help</div>
+  </div>
 
-  <h2>Game 2</h2>
-  <p>Another description.</p>
-  <a href="https://gamejolt.com/games/yourgame2">Play / Download</a>
+  <div id="main" class="page active">
+    <h1>Main</h1>
+    <p>Welcome to Fishy Studios.</p>
+    <div class="card">
+      Put your intro, updates, or whatever here.
+    </div>
+  </div>
+
+  <div id="games" class="page">
+    <h1>Games</h1>
+
+    <div class="card">
+      <h3>Game 1</h3>
+      <p>Short description of your game.</p>
+      <a href="https://gamejolt.com/games/yourgame">View on Game Jolt</a>
+    </div>
+
+    <div class="card">
+      <h3>Game 2</h3>
+      <p>Another description.</p>
+      <a href="https://gamejolt.com/games/yourgame2">View on Game Jolt</a>
+    </div>
+
+  </div>
+
+  <div id="help" class="page">
+    <h1>Help</h1>
+    <div class="card">
+      Put instructions, FAQs, or contact info here.
+    </div>
+  </div>
+
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+
+      document.getElementById(pageId).classList.add('active');
+
+      event.target.classList.add('active');
+    }
+  </script>
 
 </body>
 </html>
