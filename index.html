@@ -35,7 +35,7 @@
     .page {
       display: none;
       padding: 30px;
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
     }
 
@@ -50,9 +50,61 @@
     .card {
       background: #1a1a1a;
       padding: 15px;
-      margin: 15px 0;
+      margin: 20px 0;
       border-radius: 8px;
       border: 1px solid #2a2a2a;
+    }
+
+    .scroll-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 20px 0;
+    }
+
+    .scroll-container::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .scroll-container::-webkit-scrollbar-thumb {
+      background: #333;
+      border-radius: 4px;
+    }
+
+    .game-card {
+      min-width: 300px;
+      max-width: 300px;
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 10px;
+      overflow: hidden;
+      flex-shrink: 0;
+      transition: 0.2s;
+    }
+
+    .game-card:hover {
+      transform: scale(1.03);
+      border-color: #4da6ff;
+    }
+
+    .game-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .game-content {
+      padding: 15px;
+    }
+
+    .game-content h3 {
+      margin: 0 0 10px;
+      color: #fff;
+    }
+
+    .game-content p {
+      font-size: 14px;
+      color: #bbb;
     }
 
     a {
@@ -69,40 +121,48 @@
 <body>
 
   <div class="navbar">
-    <div class="nav-btn active" onclick="showPage('main')">Main</div>
-    <div class="nav-btn" onclick="showPage('games')">Games</div>
+    <div class="nav-btn active" onclick="showPage('home')">Home</div>
     <div class="nav-btn" onclick="showPage('help')">Help</div>
   </div>
 
-  <div id="main" class="page active">
-    <h1>Main</h1>
-    <p>Welcome to Fishy Studios.</p>
-    <div class="card">
-      Put your intro, updates, or whatever here.
-    </div>
-  </div>
-
-  <div id="games" class="page">
-    <h1>Games</h1>
+  <div id="home" class="page active">
+    <h1>Fishy Studios</h1>
 
     <div class="card">
-      <h3>Game 1</h3>
-      <p>Short description of your game.</p>
-      <a href="https://gamejolt.com/games/yourgame">View on Game Jolt</a>
+      <p>
+        Put your studio description, updates, or whatever here.
+      </p>
     </div>
 
-    <div class="card">
-      <h3>Game 2</h3>
-      <p>Another description.</p>
-      <a href="https://gamejolt.com/games/yourgame2">View on Game Jolt</a>
-    </div>
+    <h2>Games</h2>
 
+    <div class="scroll-container">
+
+      <div class="game-card">
+        <img src="https://via.placeholder.com/300x160" alt="Game Thumbnail">
+        <div class="game-content">
+          <h3>Game 1</h3>
+          <p>Short description of your game.</p>
+          <a href="https://gamejolt.com/games/yourgame">View on Game Jolt</a>
+        </div>
+      </div>
+
+      <div class="game-card">
+        <img src="https://via.placeholder.com/300x160" alt="Game Thumbnail">
+        <div class="game-content">
+          <h3>Game 2</h3>
+          <p>Another description.</p>
+          <a href="https://gamejolt.com/games/yourgame2">View on Game Jolt</a>
+        </div>
+      </div>
+
+    </div>
   </div>
 
   <div id="help" class="page">
     <h1>Help</h1>
     <div class="card">
-      Put instructions, FAQs, or contact info here.
+      Put FAQs, controls, or support info here.
     </div>
   </div>
 
@@ -112,7 +172,6 @@
       document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
 
       document.getElementById(pageId).classList.add('active');
-
       event.target.classList.add('active');
     }
   </script>
