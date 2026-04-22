@@ -115,6 +115,31 @@
     a:hover {
       text-decoration: underline;
     }
+
+    .tags {
+  margin-bottom: 8px;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 12px;
+  padding: 3px 8px;
+  margin-right: 5px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.demo {
+  background: #4da6ff;
+}
+
+.unreleased {
+  background: #888;
+}
+
+.cancelled {
+  background: #ff4d4d;
+}
   </style>
 </head>
 
@@ -142,13 +167,13 @@
         <img src="PumkinfishShips.png" style="width:100%; height:160px; object-fit:cover;">
         <div class="game-content">
           <h3>Pumkinfish Ships</h3>
-          <p>Short description of your game.</p>
+          <p>Pumkinfish Ships is the game I (Pumkinfish) have been working on since Sunday, ‎May ‎25, ‎2025, ‏‎1:52:31 PM. The game is PVE and is already released (The genre being 2D Historical Survival Shooter Anthology I think). It takes place in the Framee-Adlemen Wars (1804-1832) on the planet the species known as "Pumkinfish" come from, as a zombie like infection ravages their population. Civilians and soldiers are required to fight with nothing but Muskets, sabers, and artillery. Despite the name it is not that related to boats. There are multiple maps and 5 game modes.</p>
           <a href="https://gamejolt.com/games/PumkinfishShips/995857">View on Game Jolt</a>
         </div>
       </div>
 
-      <div class="game-card">
-        <img src="ST3PEThumb.png" style="width:100%; height:160px; object-fit:cover;>
+      <div class="game-card" data-demo="false" data-unreleased="true" data-cancelled="false">
+        <img src="ST3PEThumb.png" style="width:100%; height:160px; object-fit:cover;">
         <div class="game-content">
           <h3>Slendytubbies 3: Pumkinfish Edition</h3>
           <p>Like the original Slendytubbies 3, but I attempted to make it more realistic logically (As well as more fun in some parts). </p>
@@ -161,8 +186,16 @@
 
   <div id="help" class="page">
     <h1>Help</h1>
+
     <div class="card">
-      If you have questions or need to contact me (Pumkinfish) contact FishyStudiosbyPumkinfish@outlook.com
+      <h3>Game Status Key</h3>
+      <p><span class="tag demo">Demo</span> Early or limited version</p>
+      <p><span class="tag unreleased">Unreleased</span> Not available yet</p>
+      <p><span class="tag cancelled">Cancelled</span> Development stopped</p>
+    </div>
+
+    <div class="card">
+      Contact: FishyStudiosbyPumkinfish@outlook.com
     </div>
   </div>
 
@@ -170,10 +203,23 @@
     function showPage(pageId) {
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
       document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-
       document.getElementById(pageId).classList.add('active');
       event.target.classList.add('active');
     }
+
+    document.querySelectorAll('.game-card').forEach(card => {
+      const tags = card.querySelector('.tags');
+
+      if (card.dataset.demo === "true") {
+        tags.innerHTML += '<span class="tag demo">Demo</span>';
+      }
+      if (card.dataset.unreleased === "true") {
+        tags.innerHTML += '<span class="tag unreleased">Unreleased</span>';
+      }
+      if (card.dataset.cancelled === "true") {
+        tags.innerHTML += '<span class="tag cancelled">Cancelled</span>';
+      }
+    });
   </script>
 
 </body>
