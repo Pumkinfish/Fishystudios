@@ -207,19 +207,19 @@
       event.target.classList.add('active');
     }
 
-    document.querySelectorAll('.game-card').forEach(card => {
-      const tags = card.querySelector('.tags');
+  document.querySelectorAll('.game-card').forEach(card => {
+    const tags = card.querySelector('.tags');
 
-      if (card.dataset.demo === "true") {
-        tags.innerHTML += '<span class="tag demo">Demo</span>';
-      }
-      if (card.dataset.unreleased === "true") {
-        tags.innerHTML += '<span class="tag unreleased">Unreleased</span>';
-      }
-      if (card.dataset.cancelled === "true") {
-        tags.innerHTML += '<span class="tag cancelled">Cancelled</span>';
-      }
-    });
+    if (card.dataset.demo === "true") {
+      tags.innerHTML += '<img src="Demo.png" title="Demo" style="height:16px; margin-right:5px;">';
+    }
+    if (card.dataset.unreleased === "true") {
+      tags.innerHTML += '<img src="Unreleased.png" title="Unreleased" style="height:16px; margin-right:5px;">';
+    }
+    if (card.dataset.cancelled === "true") {
+      tags.innerHTML += '<img src="Cancelled.png" title="Cancelled" style="height:16px; margin-right:5px;">';
+    }
+  });
   </script>
 
 </body>
