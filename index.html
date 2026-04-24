@@ -71,6 +71,12 @@
       border-radius: 4px;
     }
 
+    .main-content {
+  flex: 1;
+  min-width: 0;
+  padding: 30px;
+}
+
     .game-card {
       min-width: 300px;
       max-width: 300px;
@@ -125,6 +131,16 @@
   image-rendering: crisp-edges;
 
   flex-shrink: 0;
+}
+
+    .tags img.inactive {
+  filter: grayscale(100%) brightness(60%);
+  opacity: 0.6;
+}
+
+    #home {
+  max-width: none;
+  margin: 0;
 }
 
     a {
@@ -198,9 +214,9 @@
   border-right: 1px solid #2a2a2a;
   padding: 15px;
   overflow-y: auto;
-  height: calc(100vh - 50px);
+  height: 100vh;
   position: sticky;
-  top: 50px;
+  top: 0;
 }
 
 .news-item {
@@ -253,7 +269,7 @@
 
     <div class="news-bar" id="newsBar"></div>
 
-    <div style="flex:1;">
+    <div class="main-content">
     <h1>Fishy Studios</h1>
 
     <div class="card">
@@ -372,20 +388,29 @@ document.querySelectorAll('.game-card').forEach(card => {
   const tagsContainer = card.querySelector('.tags');
 
   const tagMap = [
-    { key: "demo", img: "Demo.png", title: "Demo" },
-    { key: "unreleased", img: "Unreleased.png", title: "Unreleased" },
-    { key: "cancelled", img: "Cancelled.png", title: "Cancelled" }
+    { key: "demo", img: "Demo.png", title: "Demo", inactive: "No longer in the Demo Phase" },
+    { key: "unreleased", img: "Unreleased.png", title: "Unreleased", inactive: "No longer Unreleased" },
+    { key: "cancelled", img: "Cancelled.png", title: "Cancelled", inactive: "No longer Cancelled" }
   ];
 
   tagMap.forEach(tag => {
-    if (card.dataset[tag.key] === "true") {
-      const icon = document.createElement("img");
-      icon.src = tag.img;
+    if (!card.hasAttribute(`data-${tag.key}`)) return;
+
+    const icon = document.createElement("img");
+    icon.src = tag.img;
+
+    const value = card.dataset[tag.key];
+
+    if (value === "true") {
       icon.alt = tag.title;
       icon.title = tag.title;
-
-      tagsContainer.appendChild(icon);
+    } else {
+      icon.alt = tag.inactive;
+      icon.title = tag.inactive;
+      icon.classList.add("inactive");
     }
+
+    tagsContainer.appendChild(icon);
   });
 });
   </script>
