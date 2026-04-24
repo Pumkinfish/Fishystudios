@@ -93,19 +93,39 @@
       object-fit: cover;
     }
 
-    .game-content {
-      padding: 15px;
-    }
+.game-content {
+  padding: 15px;
+}
 
-    .game-content h3 {
-      margin: 0 0 10px;
-      color: #fff;
-    }
+.game-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
 
-    .game-content p {
-      font-size: 14px;
-      color: #bbb;
-    }
+.game-content h3 {
+  margin: 0;
+  color: #fff;
+  font-size: 18px;
+}
+
+.tags {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.tags img {
+  height: 16px;
+  width: 16px;
+  object-fit: contain;
+
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+
+  flex-shrink: 0;
+}
 
     a {
       color: #4da6ff;
@@ -140,6 +160,33 @@
 .cancelled {
   background: #ff4d4d;
 }
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 200px;
+
+  object-fit: contain;
+  background: #000;
+
+  border-radius: 8px;
+  border: 1px solid #2a2a2a;
+
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+
+  transition: 0.2s;
+}
+
+.gallery img:hover {
+  transform: scale(1.03);
+  border-color: #4da6ff;
+}
   </style>
 </head>
 
@@ -148,6 +195,7 @@
   <div class="navbar">
     <div class="nav-btn active" onclick="showPage('home')">Home</div>
     <div class="nav-btn" onclick="showPage('help')">Help</div>
+    <div class="nav-btn" onclick="showPage('special')">Special</div>
   </div>
 
   <div id="home" class="page active">
@@ -173,7 +221,7 @@
         </div>
       </div>
 
-      <div class="game-card">
+      <div class="game-card" data-unreleased="true">
         <img src="ST3PEThumb.png" style="width:100%; height:160px; object-fit:cover;">
         <div class="game-content">
           <div class="tags"></div>
@@ -251,6 +299,11 @@
     </div>
   </div>
 
+<div id="special" class="page">
+  <h1>Special</h1>
+  <div class="gallery" id="gallery"></div>
+</div>
+
   <script>
     function showPage(pageId) {
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -259,20 +312,56 @@
       event.target.classList.add('active');
     }
 
-  document.querySelectorAll('.game-card').forEach(card => {
-    const tags = card.querySelector('.tags');
+document.querySelectorAll('.game-card').forEach(card => {
+  const tagsContainer = card.querySelector('.tags');
 
-    if (card.dataset.demo === "true") {
-      tags.innerHTML += '<img src="Demo.png" title="Demo" style="height:16px; margin-right:5px;">';
-    }
-    if (card.dataset.unreleased === "true") {
-      tags.innerHTML += '<img src="Unreleased.png" title="Unreleased" style="height:16px; margin-right:5px;">';
-    }
-    if (card.dataset.cancelled === "true") {
-      tags.innerHTML += '<img src="Cancelled.png" title="Cancelled" style="height:16px; margin-right:5px;">';
+  const tagMap = [
+    { key: "demo", img: "Demo.png", title: "Demo" },
+    { key: "unreleased", img: "Unreleased.png", title: "Unreleased" },
+    { key: "cancelled", img: "Cancelled.png", title: "Cancelled" }
+  ];
+
+  tagMap.forEach(tag => {
+    if (card.dataset[tag.key] === "true") {
+      const icon = document.createElement("img");
+      icon.src = tag.img;
+      icon.alt = tag.title;
+      icon.title = tag.title;
+
+      tagsContainer.appendChild(icon);
     }
   });
+});
   </script>
+
+  <script>
+const specialImages = [
+  "special1.png",
+  "special2.png",
+  "special3.png",
+  "special4.png"
+];
+
+const gallery = document.getElementById("gallery");
+
+function renderGallery() {
+  gallery.innerHTML = "";
+
+  specialImages.forEach(src => {
+    const img = document.createElement("img");
+    img.src = src;
+    gallery.appendChild(img);
+  });
+}
+
+function cycleGallery() {
+  specialImages.push(specialImages.shift());
+  renderGallery();
+}
+
+renderGallery();
+setInterval(cycleGallery, 6000);
+</script>
 
 </body>
 </html>
