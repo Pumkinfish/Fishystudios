@@ -187,6 +187,56 @@
   transform: scale(1.03);
   border-color: #4da6ff;
 }
+
+    .layout {
+  display: flex;
+}
+
+.news-bar {
+  width: 260px;
+  background: #121212;
+  border-right: 1px solid #2a2a2a;
+  padding: 15px;
+  overflow-y: auto;
+  height: calc(100vh - 50px);
+  position: sticky;
+  top: 50px;
+}
+
+.news-item {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  transition: 0.2s;
+}
+
+.news-item:hover {
+  border-color: #4da6ff;
+}
+
+.news-item img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+
+.news-content {
+  padding: 10px;
+}
+
+.news-content h4 {
+  margin: 0 0 5px 0;
+  font-size: 14px;
+  color: #fff;
+}
+
+.news-content p {
+  font-size: 12px;
+  color: #bbb;
+  margin: 0;
+}
   </style>
 </head>
 
@@ -198,12 +248,17 @@
     <div class="nav-btn" onclick="showPage('special')">Special</div>
   </div>
 
-  <div id="home" class="page active">
+<div id="home" class="page active">
+  <div class="layout">
+
+    <div class="news-bar" id="newsBar"></div>
+
+    <div style="flex:1;">
     <h1>Fishy Studios</h1>
 
     <div class="card">
       <p>
-        Fishy Studios is a studio made by Pumkinfish (Kind of one of the only developers, also the owner). It makes games on Unity, and Roblox. They range from 2d games to 3d games. The most recent update for any of the games was 1.0.0 for Pumkinfish Ships
+        Fishy Studios is a studio made by Pumkinfish (Kind of one of the only developers, also the owner). It makes games on Unity, and Roblox. They range from 2d games to 3d games.
       </p>
     </div>
 
@@ -283,6 +338,7 @@
 
     </div>
   </div>
+</div>
 
   <div id="help" class="page">
     <h1>Help</h1>
@@ -360,5 +416,54 @@ renderGallery();
 setInterval(cycleGallery, 6000);
 </script>
 
+<script>
+const newsItems = [
+  {
+    title: "ST3:PE Progress",
+    desc: "Fuck this fat chungus game. The NPC system broke.",
+    img: "ST3PEThumb.png"
+  },
+  {
+    title: "Pumkinfish Ships Update",
+    desc: "1.1.0: New Map, New attack for big apple and the infected marine miniboss, and new soundtracks.",
+    img: "PumkinfishShips.png"
+  }
+];
+
+const newsBar = document.getElementById("newsBar");
+
+function renderNews() {
+  newsBar.innerHTML = "";
+
+  newsItems.forEach(item => {
+    const container = document.createElement("div");
+    container.className = "news-item";
+
+    if (item.img) {
+      const img = document.createElement("img");
+      img.src = item.img;
+      container.appendChild(img);
+    }
+
+    const content = document.createElement("div");
+    content.className = "news-content";
+
+    const title = document.createElement("h4");
+    title.textContent = item.title;
+
+    const desc = document.createElement("p");
+    desc.textContent = item.desc;
+
+    content.appendChild(title);
+    content.appendChild(desc);
+
+    container.appendChild(content);
+    newsBar.appendChild(container);
+  });
+}
+
+renderNews();
+</script>
+  
 </body>
 </html>
