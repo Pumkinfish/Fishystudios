@@ -259,9 +259,9 @@
 <body>
 
   <div class="navbar">
-    <div class="nav-btn active" onclick="showPage('home')">Home</div>
-    <div class="nav-btn" onclick="showPage('help')">Help</div>
-    <div class="nav-btn" onclick="showPage('special')">Special</div>
+<div class="nav-btn active" onclick="showPage('home', this)">Home</div>
+<div class="nav-btn" onclick="showPage('help', this)">Help</div>
+<div class="nav-btn" onclick="showPage('special', this)">Special</div>
   </div>
 
 <div id="home" class="page active">
@@ -377,12 +377,13 @@
 </div>
 
   <script>
-    function showPage(pageId) {
-      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-      document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-      document.getElementById(pageId).classList.add('active');
-      event.target.classList.add('active');
-    }
+function showPage(pageId, btn) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+
+  document.getElementById(pageId).classList.add('active');
+  btn.classList.add('active');
+}
 
 document.querySelectorAll('.game-card').forEach(card => {
   const tagsContainer = card.querySelector('.tags');
@@ -451,12 +452,12 @@ const newsItems = [
   {
     title: "Pumkinfish Ships Update",
     desc: "1.1.0: New Map, New attack for big apple and the infected marine miniboss, and new soundtracks.",
-    img: "QweebleThumbnail.png"
+    img: "PumkinfishShips.png"
   },
   {
     title: "Qweeble Update",
     desc: "0.5.0: Console and Mobile support, new guns, new armor, and a couple bug fixes.",
-    img: "PumkinfishShips.png"
+    img: "QweebleThumbnail.png"
   }
 ];
 
