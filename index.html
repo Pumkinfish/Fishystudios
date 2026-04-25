@@ -72,10 +72,10 @@
     }
 
     .main-content {
-  flex: 1;
-  min-width: 0;
-  padding: 30px;
-}
+      flex: 1;
+      min-width: 0;
+      padding: 30px;
+    }
 
     .game-card {
       min-width: 300px;
@@ -99,49 +99,48 @@
       object-fit: cover;
     }
 
-.game-content {
-  padding: 15px;
-}
+    .game-content {
+      padding: 15px;
+    }
 
-.game-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-}
+    .game-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
 
-.game-content h3 {
-  margin: 0;
-  color: #fff;
-  font-size: 18px;
-}
+    .game-content h3 {
+      margin: 0;
+      color: #fff;
+      font-size: 18px;
+    }
 
-.tags {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
+    .tags {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
 
-.tags img {
-  height: 32px;
-  width: 32px;
-  object-fit: contain;
-
-  image-rendering: pixelated;
-  image-rendering: crisp-edges;
-
-  flex-shrink: 0;
-}
+    .tags img {
+      height: 32px;
+      width: 32px;
+      object-fit: contain;
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+      flex-shrink: 0;
+    }
 
     .tags img.inactive {
-  filter: grayscale(100%) brightness(60%);
-  opacity: 0.6;
-}
+      filter: grayscale(100%) brightness(60%);
+      opacity: 0.6;
+    }
 
     #home {
-  max-width: none;
-  margin: 0;
-}
+      max-width: none;
+      margin: 0;
+      padding: 0;
+    }
 
     a {
       color: #4da6ff;
@@ -153,208 +152,204 @@
     }
 
     .tags {
-  margin-bottom: 8px;
-}
+      margin-bottom: 8px;
+    }
 
-.tag {
-  display: inline-block;
-  font-size: 12px;
-  padding: 3px 8px;
-  margin-right: 5px;
-  border-radius: 5px;
-  color: #fff;
-}
+    .tag {
+      display: inline-block;
+      font-size: 12px;
+      padding: 3px 8px;
+      margin-right: 5px;
+      border-radius: 5px;
+      color: #fff;
+    }
 
-.demo {
-  background: #4da6ff;
-}
+    .demo {
+      background: #4da6ff;
+    }
 
-.unreleased {
-  background: #888;
-}
+    .unreleased {
+      background: #888;
+    }
 
-.cancelled {
-  background: #ff4d4d;
-}
+    .cancelled {
+      background: #ff4d4d;
+    }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 15px;
-}
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 15px;
+    }
 
-.gallery img {
-  width: 100%;
-  height: 200px;
+    .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: contain;
+      background: #000;
+      border-radius: 8px;
+      border: 1px solid #2a2a2a;
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+      transition: 0.2s;
+    }
 
-  object-fit: contain;
-  background: #000;
-
-  border-radius: 8px;
-  border: 1px solid #2a2a2a;
-
-  image-rendering: pixelated;
-  image-rendering: crisp-edges;
-
-  transition: 0.2s;
-}
-
-.gallery img:hover {
-  transform: scale(1.03);
-  border-color: #4da6ff;
-}
+    .gallery img:hover {
+      transform: scale(1.03);
+      border-color: #4da6ff;
+    }
 
     .layout {
-  display: flex;
-}
+      display: flex;
+    }
 
-.news-bar {
-  width: 260px;
-  background: #121212;
-  border-right: 1px solid #2a2a2a;
-  padding: 15px;
-  overflow-y: auto;
-  height: 100vh;
-  position: sticky;
-  top: 0;
-}
+    .news-bar {
+      width: 260px;
+      background: #121212;
+      border-right: 1px solid #2a2a2a;
+      padding: 15px;
+      overflow-y: auto;
+      height: 100vh;
+      position: sticky;
+      top: 0;
+    }
 
-.news-item {
-  background: #1a1a1a;
-  border: 1px solid #2a2a2a;
-  border-radius: 8px;
-  margin-bottom: 15px;
-  overflow: hidden;
-  transition: 0.2s;
-}
+    .news-item {
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      overflow: hidden;
+      transition: 0.2s;
+    }
 
-.news-item:hover {
-  border-color: #4da6ff;
-}
+    .news-item:hover {
+      border-color: #4da6ff;
+    }
 
-.news-item img {
-  width: 100%;
-  height: 120px;
-  object-fit: cover;
-}
+    .news-item img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+    }
 
-.news-content {
-  padding: 10px;
-}
+    .news-content {
+      padding: 10px;
+    }
 
-.news-content h4 {
-  margin: 0 0 5px 0;
-  font-size: 14px;
-  color: #fff;
-}
+    .news-content h4 {
+      margin: 0 0 5px 0;
+      font-size: 14px;
+      color: #fff;
+    }
 
-.news-content p {
-  font-size: 12px;
-  color: #bbb;
-  margin: 0;
-}
+    .news-content p {
+      font-size: 12px;
+      color: #bbb;
+      margin: 0;
+    }
   </style>
 </head>
 
 <body>
 
   <div class="navbar">
-<div class="nav-btn active" onclick="showPage('home', this)">Home</div>
-<div class="nav-btn" onclick="showPage('help', this)">Help</div>
-<div class="nav-btn" onclick="showPage('special', this)">Special</div>
+    <div class="nav-btn active" onclick="showPage('home', this)">Home</div>
+    <div class="nav-btn" onclick="showPage('help', this)">Help</div>
+    <div class="nav-btn" onclick="showPage('special', this)">Special</div>
   </div>
 
-<div id="home" class="page active">
-  <div class="layout">
+  <div id="home" class="page active">
+    <div class="layout">
+      <div class="news-bar" id="newsBar"></div>
 
-    <div class="news-bar" id="newsBar"></div>
+      <div class="main-content">
+        <h1>Fishy Studios</h1>
 
-    <div class="main-content">
-    <h1>Fishy Studios</h1>
+        <div class="card">
+          <p>
+            Fishy Studios is a studio made by Pumkinfish (Kind of one of the only developers, also the owner). It makes games on Unity, and Roblox. They range from 2d games to 3d games.
+          </p>
+        </div>
 
-    <div class="card">
-      <p>
-        Fishy Studios is a studio made by Pumkinfish (Kind of one of the only developers, also the owner). It makes games on Unity, and Roblox. They range from 2d games to 3d games.
-      </p>
-    </div>
+        <h2>Games</h2>
 
-    <h2>Games</h2>
+        <div class="scroll-container">
 
-    <div class="scroll-container">
+          <div class="game-card">
+            <img src="PumkinfishShips.png" style="width:100%; height:160px; object-fit:cover;">
+            <div class="game-content">
+              <div class="tags"></div>
+              <h3>Pumkinfish Ships</h3>
+              <p>Pumkinfish Ships is the game I (Pumkinfish) have been working on since Sunday, ‎May ‎25, ‎2025, ‏‎1:52:31 PM. The game is PVE and is already released (The genre being 2D Historical Survival Shooter Anthology I think). It takes place in the Framee-Adlemen Wars (1804-1832) on the planet the species known as "Pumkinfish" come from, as a zombie like infection ravages their population. Civilians and soldiers are required to fight with nothing but Muskets, sabers, and artillery. Despite the name it is not that related to boats. There are multiple maps and 5 game modes.</p>
+              <a href="https://gamejolt.com/games/PumkinfishShips/995857">View on Game Jolt</a>
+            </div>
+          </div>
 
-      <div class="game-card">
-        <img src="PumkinfishShips.png" style="width:100%; height:160px; object-fit:cover;">
-        <div class="game-content">
-          <div class="tags"></div>
-          <h3>Pumkinfish Ships</h3>
-          <p>Pumkinfish Ships is the game I (Pumkinfish) have been working on since Sunday, ‎May ‎25, ‎2025, ‏‎1:52:31 PM. The game is PVE and is already released (The genre being 2D Historical Survival Shooter Anthology I think). It takes place in the Framee-Adlemen Wars (1804-1832) on the planet the species known as "Pumkinfish" come from, as a zombie like infection ravages their population. Civilians and soldiers are required to fight with nothing but Muskets, sabers, and artillery. Despite the name it is not that related to boats. There are multiple maps and 5 game modes.</p>
-          <a href="https://gamejolt.com/games/PumkinfishShips/995857">View on Game Jolt</a>
+          <div class="game-card" data-unreleased="true" data-demo="true">
+            <img src="ST3PEThumb.png" style="width:100%; height:160px; object-fit:cover;">
+            <div class="game-content">
+              <div class="tags"></div>
+              <h3>Slendytubbies 3: Pumkinfish Edition</h3>
+              <p>Slendytubbies 3 Pumkinfish Edition (ST3:PE) is a game I (Pumkinfish) are creating. It is based of Slendytubbies 3 with different gameplay, a new story, and something else I can't list more than 2. It's changed based off things I did not like about the main game. I also aim to make the game more realistic logically.</p>
+              <a href="https://gamejolt.com/games/ST3PE/1040087">View on Game Jolt</a>
+            </div>
+          </div>
+
+          <div class="game-card" data-demo="false">
+            <img src="QweebleThumbnail.png" style="width:100%; height:160px; object-fit:cover;">
+            <div class="game-content">
+              <div class="tags"></div>
+              <h3>Qweeble</h3>
+              <p>Qweeble: Think town roblox but with pumkinfish. You can spawn armor, Guns, Build stuff if i ever figure that out, and The players have 900 health and 800 pounds total of inventory space.</p>
+              <a href="https://www.roblox.com/games/115779292216701/Qweeble">View on Roblox</a>
+            </div>
+          </div>
+
+          <div class="game-card">
+            <img src="PumkinfishShipsArchivse.webp" style="width:100%; height:160px; object-fit:cover;">
+            <div class="game-content">
+              <div class="tags"></div>
+              <h3>Pumkinfish Ships Version Archive</h3>
+              <p>Archived versions of Pumkinfish Ships. Pumkinfish Ships is the game I (Pumkinfish) have been working on since Sunday, ‎May ‎25, ‎2025, ‏‎1:52:31 PM. The game is PVE and is already released (The genre being 2D Historical Survival Shooter Anthology I think). It takes place in the Framee-Adlemen Wars (1804-1832) on the planet the species known as "Pumkinfish" come from, as a zombie like infection ravages their population. Civilians and soldiers are required to fight with nothing but Muskets, sabers, and artillery. Despite the name it is not that related to boats. There are multiple maps and 5 game modes.</p>
+              <a href="https://gamejolt.com/games/PfishShipsVersionArchive/1042825">View on Game Jolt</a>
+            </div>
+          </div>
+
+          <div class="game-card">
+            <img src="EvilAssGridGameThumb.webp" style="width:100%; height:160px; object-fit:cover;">
+            <div class="game-content">
+              <div class="tags"></div>
+              <h3>Grid Giggler</h3>
+              <p>You place characters on a grid (you can make them in the downloaded version not web version), and they fight, They even have teams. The characters will surrender, arrest, or kill the other enemy depending on aggression, cowardice, and other things like health.</p>
+              <a href="https://gamejolt.com/games/GrigGiggler/1034398">View on Game Jolt</a>
+            </div>
+          </div>
+
+          <div class="game-card">
+            <img src="GartenOfRevengefulPumkinfish.webp" style="width:100%; height:160px; object-fit:cover;">
+            <div class="game-content">
+              <div class="tags"></div>
+              <h3>Garten of Revengeful Pumkinfish</h3>
+              <p>Garten Of BanBan 100%. This game is satire. It is shit. Story: I was in a call with friends, and they made the joke of "Garten of Revengeful Pumkinfish", So I made it because I was bored.</p>
+              <a href="https://gamejolt.com/games/gartenofrevengefulpumkinfish/1051743">View on Gamejolt</a>
+            </div>
+          </div>
+
+          <div class="game-card" data-unreleased="true">
+            <img src="PumkinfishArchives.webp" style="width:100%; height:160px; object-fit:cover;">
+            <div class="game-content">
+              <div class="tags"></div>
+              <h3>Pumkinfish Archives</h3>
+              <p>A campaign based horror game in a facility, perchance.</p>
+              <a href="https://gamejolt.com/games/PumkinfishArchives/983352">View on Gamejolt</a>
+            </div>
+          </div>
+
         </div>
       </div>
-
-      <div class="game-card" data-unreleased="true" data-demo="true">
-        <img src="ST3PEThumb.png" style="width:100%; height:160px; object-fit:cover;">
-        <div class="game-content">
-          <div class="tags"></div>
-          <h3>Slendytubbies 3: Pumkinfish Edition</h3>
-          <p>Slendytubbies 3 Pumkinfish Edition (ST3:PE) is a game I (Pumkinfish) are creating. It is based of Slendytubbies 3 with different gameplay, a new story, and something else I can't list more than 2. It's changed based off things I did not like about the main game. I also aim to make the game more realistic logically.</p>
-          <a href="https://gamejolt.com/games/ST3PE/1040087">View on Game Jolt</a>
-        </div>
-      </div>
-
-      <div class="game-card" data-demo="false">
-        <img src="QweebleThumbnail.png" style="width:100%; height:160px; object-fit:cover;">
-        <div class="game-content">
-          <div class="tags"></div>
-          <h3>Qweeble</h3>
-          <p>Qweeble: Think town roblox but with pumkinfish. You can spawn armor, Guns, Build stuff if i ever figure that out, and The players have 900 health and 800 pounds total of inventory space.</p>
-          <a href="https://www.roblox.com/games/115779292216701/Qweeble">View on Roblox</a>
-        </div>
-      </div>
-
-      <div class="game-card">
-        <img src="PumkinfishShipsArchivse.webp" style="width:100%; height:160px; object-fit:cover;">
-        <div class="game-content">
-          <div class="tags"></div>
-          <h3>Pumkinfish Ships Version Archive</h3>
-          <p>Archived versions of Pumkinfish Ships. Pumkinfish Ships is the game I (Pumkinfish) have been working on since Sunday, ‎May ‎25, ‎2025, ‏‎1:52:31 PM. The game is PVE and is already released (The genre being 2D Historical Survival Shooter Anthology I think). It takes place in the Framee-Adlemen Wars (1804-1832) on the planet the species known as "Pumkinfish" come from, as a zombie like infection ravages their population. Civilians and soldiers are required to fight with nothing but Muskets, sabers, and artillery. Despite the name it is not that related to boats. There are multiple maps and 5 game modes.</p>
-          <a href="https://gamejolt.com/games/PfishShipsVersionArchive/1042825">View on Game Jolt</a>
-        </div>
-      </div>
-
-      <div class="game-card">
-        <img src="EvilAssGridGameThumb.webp" style="width:100%; height:160px; object-fit:cover;">
-        <div class="game-content">
-          <div class="tags"></div>
-          <h3>Grid Giggler</h3>
-          <p>You place characters on a grid (you can make them in the downloaded version not web version), and they fight, They even have teams. The characters will surrender, arrest, or kill the other enemy depending on aggression, cowardice, and other things like health.</p>
-          <a href="https://gamejolt.com/games/GrigGiggler/1034398">View on Game Jolt</a>
-        </div>
-      </div>
-
-      <div class="game-card">
-        <img src="GartenOfRevengefulPumkinfish.webp" style="width:100%; height:160px; object-fit:cover;">
-        <div class="game-content">
-          <div class="tags"></div>
-          <h3>Garten of Revengeful Pumkinfish</h3>
-          <p>Garten Of BanBan 100%. This game is satire. It is shit. Story: I was in a call with friends, and they made the joke of "Garten of Revengeful Pumkinfish", So I made it because I was bored.</p>
-          <a href="https://gamejolt.com/games/gartenofrevengefulpumkinfish/1051743">View on Gamejolt</a>
-        </div>
-      </div>
-
-      <div class="game-card" data-unreleased="true">
-        <img src="PumkinfishArchives.webp" style="width:100%; height:160px; object-fit:cover;">
-        <div class="game-content">
-          <div class="tags"></div>
-          <h3>Pumkinfish Archives</h3>
-          <p>A campaign based horror game in a facility, perchance.</p>
-          <a href="https://gamejolt.com/games/PumkinfishArchives/983352">View on Gamejolt</a>
-        </div>
-      </div>
-
     </div>
   </div>
-</div>
 
   <div id="help" class="page">
     <h1>Help</h1>
@@ -371,135 +366,135 @@
     </div>
   </div>
 
-<div id="special" class="page">
-  <h1>Special</h1>
-  <div class="gallery" id="gallery"></div>
-</div>
+  <div id="special" class="page">
+    <h1>Special</h1>
+    <div class="gallery" id="gallery"></div>
+  </div>
 
   <script>
-function showPage(pageId, btn) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    function showPage(pageId, btn) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
 
-  document.getElementById(pageId).classList.add('active');
-  btn.classList.add('active');
-}
-
-document.querySelectorAll('.game-card').forEach(card => {
-  const tagsContainer = card.querySelector('.tags');
-
-  const tagMap = [
-    { key: "demo", img: "Demo.png", title: "Demo", inactive: "No longer in the Demo Phase" },
-    { key: "unreleased", img: "Unreleased.png", title: "Unreleased", inactive: "No longer Unreleased" },
-    { key: "cancelled", img: "Cancelled.png", title: "Cancelled", inactive: "No longer Cancelled" }
-  ];
-
-  tagMap.forEach(tag => {
-    if (!card.hasAttribute(`data-${tag.key}`)) return;
-
-    const icon = document.createElement("img");
-    icon.src = tag.img;
-
-    const value = card.dataset[tag.key];
-
-    if (value === "true") {
-      icon.alt = tag.title;
-      icon.title = tag.title;
-    } else {
-      icon.alt = tag.inactive;
-      icon.title = tag.inactive;
-      icon.classList.add("inactive");
+      document.getElementById(pageId).classList.add('active');
+      btn.classList.add('active');
     }
 
-    tagsContainer.appendChild(icon);
-  });
-});
+    document.querySelectorAll('.game-card').forEach(card => {
+      const tagsContainer = card.querySelector('.tags');
+
+      const tagMap = [
+        { key: "demo", img: "Demo.png", title: "Demo", inactive: "No longer in the Demo Phase" },
+        { key: "unreleased", img: "Unreleased.png", title: "Unreleased", inactive: "No longer Unreleased" },
+        { key: "cancelled", img: "Cancelled.png", title: "Cancelled", inactive: "No longer Cancelled" }
+      ];
+
+      tagMap.forEach(tag => {
+        if (!card.hasAttribute(`data-${tag.key}`)) return;
+
+        const icon = document.createElement("img");
+        icon.src = tag.img;
+
+        const value = card.dataset[tag.key];
+
+        if (value === "true") {
+          icon.alt = tag.title;
+          icon.title = tag.title;
+        } else {
+          icon.alt = tag.inactive;
+          icon.title = tag.inactive;
+          icon.classList.add("inactive");
+        }
+
+        tagsContainer.appendChild(icon);
+      });
+    });
   </script>
 
   <script>
-const specialImages = [
-"Screenshot_20260423_174025_TikTokCopy_5.jpg"
-];
+    const specialImages = [
+      "Screenshot_20260423_174025_TikTokCopy_5.jpg"
+    ];
 
-const gallery = document.getElementById("gallery");
+    const gallery = document.getElementById("gallery");
 
-function renderGallery() {
-  gallery.innerHTML = "";
+    function renderGallery() {
+      gallery.innerHTML = "";
 
-  specialImages.forEach(src => {
-    const img = document.createElement("img");
-    img.src = src;
-    gallery.appendChild(img);
-  });
-}
-
-function cycleGallery() {
-  specialImages.push(specialImages.shift());
-  renderGallery();
-}
-
-renderGallery();
-setInterval(cycleGallery, 6000);
-</script>
-
-<script>
-const newsItems = [
-  {
-    title: "ST3:PE Progress",
-    desc: "Fuck this fat chungus game. The NPC system broke.",
-    img: "ST3PEThumb.png"
-  },
-  {
-    title: "Pumkinfish Ships Update",
-    desc: "1.1.0: New Map, New attack for big apple and the infected marine miniboss, and new soundtracks.",
-    img: "PumkinfishShips.png"
-  },
-  {
-    title: "Qweeble Update",
-    desc: "0.5.0: Console and Mobile support, new guns, new armor, and a couple bug fixes.",
-    img: "QweebleThumbnail.png"
-  },
-  {
-    title: "ST3:PE Progress",
-    desc: "Completely remade the shitass NPC system that broke last time sigh I hate this project kind of perchancerly. However in return for it taking forever I will improve the cutscenes the most I can",
-    img: "ST3PEThumb.png"
-  }
-];
-
-const newsBar = document.getElementById("newsBar");
-
-function renderNews() {
-  newsBar.innerHTML = "";
-
-  newsItems.forEach(item => {
-    const container = document.createElement("div");
-    container.className = "news-item";
-
-    if (item.img) {
-      const img = document.createElement("img");
-      img.src = item.img;
-      container.appendChild(img);
+      specialImages.forEach(src => {
+        const img = document.createElement("img");
+        img.src = src;
+        gallery.appendChild(img);
+      });
     }
 
-    const content = document.createElement("div");
-    content.className = "news-content";
+    function cycleGallery() {
+      specialImages.push(specialImages.shift());
+      renderGallery();
+    }
 
-    const title = document.createElement("h4");
-    title.textContent = item.title;
+    renderGallery();
+    setInterval(cycleGallery, 6000);
+  </script>
 
-    const desc = document.createElement("p");
-    desc.textContent = item.desc;
+  <script>
+    const newsItems = [
+      {
+        title: "ST3:PE Progress",
+        desc: "Fuck this fat chungus game. The NPC system broke.",
+        img: "ST3PEThumb.png"
+      },
+      {
+        title: "Pumkinfish Ships Update",
+        desc: "1.1.0: New Map, New attack for big apple and the infected marine miniboss, and new soundtracks.",
+        img: "PumkinfishShips.png"
+      },
+      {
+        title: "Qweeble Update",
+        desc: "0.5.0: Console and Mobile support, new guns, new armor, and a couple bug fixes.",
+        img: "QweebleThumbnail.png"
+      },
+      {
+        title: "ST3:PE Progress",
+        desc: "Completely remade the shitass NPC system that broke last time sigh I hate this project kind of perchancerly. However in return for it taking forever I will improve the cutscenes the most I can",
+        img: "ST3PEThumb.png"
+      }
+    ];
 
-    content.appendChild(title);
-    content.appendChild(desc);
+    const newsBar = document.getElementById("newsBar");
 
-    container.appendChild(content);
-    newsBar.appendChild(container);
-  });
-}
+    function renderNews() {
+      newsBar.innerHTML = "";
 
-renderNews();
-</script>
-  
+      newsItems.forEach(item => {
+        const container = document.createElement("div");
+        container.className = "news-item";
+
+        if (item.img) {
+          const img = document.createElement("img");
+          img.src = item.img;
+          container.appendChild(img);
+        }
+
+        const content = document.createElement("div");
+        content.className = "news-content";
+
+        const title = document.createElement("h4");
+        title.textContent = item.title;
+
+        const desc = document.createElement("p");
+        desc.textContent = item.desc;
+
+        content.appendChild(title);
+        content.appendChild(desc);
+
+        container.appendChild(content);
+        newsBar.appendChild(container);
+      });
+    }
+
+    renderNews();
+  </script>
+
 </body>
 </html>
