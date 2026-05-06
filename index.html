@@ -257,6 +257,7 @@
     <div class="nav-btn active" onclick="showPage('home', this)">Home</div>
     <div class="nav-btn" onclick="showPage('help', this)">Help</div>
     <div class="nav-btn" onclick="showPage('special', this)">Special</div>
+    <div class="nav-btn" onclick="showPage('codes', this)">Codes</div>
   </div>
 
   <div id="home" class="page active">
@@ -370,6 +371,23 @@
     <h1>Special</h1>
     <div class="gallery" id="gallery"></div>
   </div>
+
+  <div id="codes" class="page">
+  <h1>Secret Codes</h1>
+  <div class="card">
+    <p>Enter Code.</p>
+    <div style="display: flex; gap: 10px;">
+      <input type="text" id="codeInput" placeholder="Enter code..." style="padding: 10px; flex: 1; background: #2a2a2a; border: 1px solid #444; color: white; border-radius: 5px;">
+      <button onclick="redeemCode()" style="padding: 10px 20px; background: #4da6ff; border: none; color: white; border-radius: 5px; cursor: pointer; font-weight: bold;">Redeem</button>
+    </div>
+  </div>
+
+  <div id="codeDisplay" class="card" style="display: none; text-align: center;">
+    <h2 id="codeTitle" style="margin-top: 0;"></h2>
+    <img id="codeImage" src="" style="max-width: 100%; max-height: 400px; border-radius: 8px; margin: 15px 0; border: 1px solid #333;">
+    <p id="codeDesc" style="line-height: 1.6; color: #bbb;"></p>
+  </div>
+</div>
 
   <script>
     function showPage(pageId, btn) {
@@ -499,6 +517,33 @@
     }
 
     renderNews();
+
+    const secretCodes = {
+  "AUT-KG-E": {
+    title: "Forensics Report",
+    img: "PumkinfishShips.png",
+    desc: "This document reveals the forensics report of the first zombies of the Korashanee Canabalism Outbreak."
+  }
+};
+
+function redeemCode() {
+  const input = document.getElementById('codeInput').value.trim().toUpperCase();
+  const display = document.getElementById('codeDisplay');
+  const title = document.getElementById('codeTitle');
+  const img = document.getElementById('codeImage');
+  const desc = document.getElementById('codeDesc');
+
+  if (secretCodes[input]) {
+    const data = secretCodes[input];
+    title.textContent = data.title;
+    img.src = data.img;
+    desc.textContent = data.desc;
+    display.style.display = "block";
+  } else {
+    alert("Invalid Code");
+    display.style.display = "none";
+  }
+}
   </script>
 
 </body>
