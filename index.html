@@ -488,7 +488,7 @@
     <div class="gallery" id="gallery"></div>
   </div>
 
-  <div id="codes" class="page">
+<div id="codes" class="page">
   <h1>Secret Codes</h1>
   <div class="card">
     <p>Enter Code.</p>
@@ -497,6 +497,13 @@
       <button onclick="redeemCode()" style="padding: 10px 20px; background: #2E154F; border: none; color: white; border-radius: 5px; cursor: pointer; font-weight: bold;">Enter</button>
     </div>
   </div>
+
+  <div id="codeDisplay" class="card" style="display: none; text-align: center;">
+    <h2 id="codeTitle" style="margin-top: 0;"></h2>
+    <img id="codeImage" src="" style="max-width: 100%; max-height: 400px; border-radius: 8px; margin: 15px 0; border: 1px solid #333;">
+    <p id="codeDesc" style="line-height: 1.6; color: #bbb;"></p>
+  </div>
+</div>
 
 <div id="roadmap" class="page">
   <h1 style="text-align:center;">Development Roadmap</h1>
@@ -509,6 +516,7 @@
     </div>
 
   </div>
+
 </div>
 
   <div id="codeDisplay" class="card" style="display: none; text-align: center;">
